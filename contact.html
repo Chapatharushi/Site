@@ -1,85 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
+	
+	body {font-family: Arial, Helvetica, sans-serif;
+		text-align: center;}
 * {box-sizing: border-box;}
 
+input[type=submit]:hover{
+  background-color:grey;
+  padding: 10px;
+}
 
-input[type=text], select, textarea {
+input[type=text],input[type=date],input[type=number],select[id=country],textarea[id=subject]{
+  padding: 10px;
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
+  
 }
 
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
+.bg-img {
+  background-image: url("d.jpg");
+  min-height: 380px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 .container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  float: left;
+  position:;
+  right: 0;
+  margin: 20px;
+  max-width: 450px;
+  padding: 15px;
+  background-color: white;
 }
-.abc{
-    float: left;
-    height: 550px;
-    width: 200px;
-    background-color: #555;
-}
-
+  
 </style>
 </head>
-<body>
+<body bgcolor="grey">
 
-<h3
->Contact Form</h3>
-<div class="abc">
-</div>
+<h3 align='center'><font size=5 >Contact Form</font></h3>
 
-
-
+<div class="bg-img">
+  
 <div class="container">
-  <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+  <form action="/action_page" method="post">
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <label for="fname"><b>First Name</b></label><br>
+    <input type="text" id="fname" name="firstname" placeholder="Your First name.."required pattern="[a-zA-Z][a-zA-Z0-9\s]*">
+<br>
+<br>
+    <label for="lname"><b>Last Name</b></label><br>
+    <input type="text" id="lname" name="lastname" placeholder="Your Last name.."required pattern="[a-zA-Z][a-zA-Z0-9\s]*">
+<br>
+<br>
+    <label for="email"><b>Email</b></label><br>
+    <input type="text" id="email" name="email"  placeholder="Your Email.."required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+<br>
+<br>
+    <label for="dob"><b>Date of Birth</b></label><br>
+    <input type="date" id="dob" name="dob"  placeholder="dob.."required>
 
-    <label for="country">Country</label>
+<br>
+<br>
+    <label for="no"><b>Contact No</b></label><br> 
+    <input type="number" id="no" name="no"  placeholder="contact no.."required pattern="[0-9]+">
+<br>	
+<br>	
+    <label for="country"><b>Country</b></label><br>
     <select id="country" name="country">
-      <option value="australia">Srilanka</option>
+      <option value="srilanka">Srilanka</option>
       <option value="canada">Canada</option>
+      <option value="australia">Australia</option>
       <option value="usa">USA</option>
-      <option value="usa">Australia</option>
     </select>
-
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+<br>
+<br>
+  <label for="Gender" class="gender"><b>Gender</b></label>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">  Male</label>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other">Other</label>
+<br>
+<br>
+    <label for="subject"><b>Subject</b></label><br>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required pattern="[a-zA-Z][a-zA-Z0-9\s]*"></textarea>
+<br>
+<br>
 
     <input type="submit" value="Submit">
 
-    
-    
   </form>
 </div>
-
+</div>
 </body>
 </html>
